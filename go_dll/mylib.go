@@ -1,6 +1,10 @@
 package main
 
+/*
+#include <stdlib.h>
+*/
 import "C"
+import "unsafe"
 
 //export CallBasic2
 func CallBasic2(key, msg *C.char) (resultMsg *C.char, isOk bool) {
@@ -18,6 +22,11 @@ func CallBasic2(key, msg *C.char) (resultMsg *C.char, isOk bool) {
 	}
 
 	return
+}
+
+//export FreeString
+func FreeString(ptr *C.char) {
+	C.free(unsafe.Pointer(ptr))
 }
 
 func main() {}

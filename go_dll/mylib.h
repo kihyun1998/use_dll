@@ -19,6 +19,11 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 /* Start of preamble from import "C" comments.  */
 
 
+#line 3 "mylib.go"
+
+#include <stdlib.h>
+
+#line 1 "cgo-generated-wrapper"
 
 
 /* End of preamble from import "C" comments.  */
@@ -81,6 +86,7 @@ struct CallBasic2_return {
 	GoUint8 r1; /* isOk */
 };
 extern __declspec(dllexport) struct CallBasic2_return CallBasic2(char* key, char* msg);
+extern __declspec(dllexport) void FreeString(char* ptr);
 
 #ifdef __cplusplus
 }
